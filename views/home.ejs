@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+          <i class='bx'><img src="/image/logos.png" style="width: 65px; top: 55px;" alt=""></i>
+          <span class="logo_name">Todo Maker</span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="#">
+              <i class='bx bx-home' ></i>
+              <span class="link_name">Home</span>
+            </a>
+          <li>
+            <div class="iocn-link">
+                <a href="#">
+                  <i class='bx bx-book-alt'></i>
+                  <span class="link_name">Board's</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+              <ul class="sub-menu" id="boardDropdown">
+                <li><a class="" href="/task">Board's</a></li>
+              </ul>
+          </li>
+          <li>
+            <a href="/kalender">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="link_name">Calendar</span>
+            </a>
+          <li>
+          <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <a href="/profile">
+                <img src="/image/man.png" alt="profileImg">
+            </a>
+          </div>
+          <div class="name-job">
+            <div class="profile_name"><%= username %></div>
+            <div class="job">Free User</div>
+          </div>
+          <form id="logoutForm" action="/logout" method="POST" style="display: inline;">
+            <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;">
+                <i class='bx bx-log-out'></i>
+            </a>
+        </form>
+        </div>
+      </li>
+    </ul>
+      </div>
+      <section class="home-section">
+        <div class="home-content">
+        </div>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="header-info">
+                    <h3 class="greeting">Welcome, <%= username %>!</h3>
+                    <h2>Todo Maker</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <i class='bx bx-menu' style="font-size: 32px;" ></i>
+            </div>
+        </header>
+
+        <div class="search-and-filter">
+            <div class="search-bar">
+                <i class='bx bx-search'></i>
+                <input type="text" id="searchInput" placeholder="Search boards...">
+            </div>
+            <div class="filter-buttons">
+                <button id="showInbox" class="filter-btn">Inbox</button>
+                <button id="yourTodoBtn" class="filter-btn active">Your To-Do</button>
+                <button id="sharingTodoBtn" class="filter-btn">Sharing To-Do</button>
+            </div>
+        </div>
+
+        <div class="add-board">
+            <button id="openAddBoardModal" class="add-board-btn">
+                <i class='bx bx-plus'></i> Add New Board
+            </button>
+        </div>
+        
+        <div class="boards" id="boardContainer"></div>
+    </div>
+</body>
+<script src="/script/home_script.js"></script>
+</html>

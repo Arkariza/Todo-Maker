@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar | To-Do Maker</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/kalender.css">    
+</head>
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+          <i class='bx'><img src="/image/logos.png" style="width: 65px; top: 55px;" alt=""></i>
+          <span class="logo_name">Todo Maker</span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="/home">
+              <i class='bx bx-home' ></i>
+              <span class="link_name">Home</span>
+            </a>
+          </li>
+          <li>
+            <div class="iocn-link">
+                <a href="#">
+                  <i class='bx bx-book-alt'></i>
+                  <span class="link_name">Board's</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+              <ul class="sub-menu" id="boardDropdown">
+                <li><a class="" href="">Board's</a></li>
+              </ul>
+          </li>
+          <li>
+            <a href="/kalender">
+              <i class='bx bx-calendar' ></i>
+              <span class="link_name">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <div class="profile-details">
+              <div class="profile-content">
+                <a href="/profile">
+                    <img src="/image/man.png" alt="profileImg">
+                </a>
+              </div>
+              <div class="name-job">
+                <div class="profile_name"><%=username%></div>
+                <div class="job">Free User</div>
+              </div>
+              <form id="logoutForm" action="/logout" method="POST" style="display: inline;">
+                <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;">
+                    <i class='bx bx-log-out'></i>
+                </a>
+              </form>
+            </div>
+          </li>
+        </ul>
+    </div>
+    
+    <section class="home-section">
+        <div class="toggle-btn">
+            <i class='bx bx-menu' style="font-size: 32px;"></i>
+        </div>
+        
+        <div class="container">
+            <div class="calendar-container">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+        </div>
+    </div>
+
+    
+    <div class="loading" id="loadingIndicator">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/script/kalender_script.js"></script>
+</body>
+</html>

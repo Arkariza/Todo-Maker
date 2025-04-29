@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Todo List App</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h2>Profile</h2>
+            </div>
+            <div class="nav-buttons">
+                <a href="/home" class="btn">Dashboard</a>
+                <a href="/" class="btn">Logout</a>
+            </div>
+        </header>
+        
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="profile-pic">
+                    <%= username.charAt(0).toUpperCase() %>
+                </div>
+                <div class="profile-info">
+                    <h3><%= username %></h3>
+                    <p>Member since <%= joinDate %></p>
+                    <button class="btn btn-primary" id="editProfileBtn" style="margin-top: 10px;">Edit Profile</button>
+                </div>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="stat-card">
+                    <h3 id="boardCount">0</h3>
+                    <p>Boards</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="taskCount">0</h3>
+                    <p>Tasks</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="completedCount">0</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-overlay" id="editProfileModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Edit Profile</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            
+            <div class="edit-form">
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" value="<%= username %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="<%= email %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password (leave blank to keep unchanged)</label>
+                        <input type="password" id="newPassword" name="newPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn" id="resetBtn">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script/profile_script.js"></script>
+</body>
+</html>

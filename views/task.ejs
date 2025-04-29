@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dashboard</title>
+    <link rel="stylesheet" href="/css/task.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/image/logos.png" style="width: 55px; top: 55px;" alt="">
+            <div class="logo-text">Todo Maker</div>
+        </div>
+        <div>
+            <a href="/home" class="back-btn">Back to Home</a>
+            <div class="dropdown">
+                <button class="back-btn dropdown-btn"><img src="/image/down.png" alt="" style="width: 10px;"></button>
+                <div class="dropdown-content" id="userDropdown">
+                    <div class="dropdown-item" onclick="openAddUserModal()">Add User</div>
+                    <div class="dropdown-item" onclick="openUserListModal()">List Users</div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    
+    <div class="main-content">
+        <div class="add-column">
+            <span>+ Add Column</span>
+        </div>
+    </div>
+</body>
+<script src="script/task_script.js"></script>
+</html>
